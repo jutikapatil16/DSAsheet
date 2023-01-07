@@ -1,5 +1,5 @@
 
-class 16array{
+class Solution{
     public long findMinDiff (ArrayList<Integer> a, int n, int m)
     {
         long min_diff = Integer.MAX_VALUE;
