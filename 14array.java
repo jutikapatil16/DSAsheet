@@ -1,24 +1,43 @@
+class Solution {
+  public int maxSubArray(int[] nums) {
 
-class Reverse
-{
-    // Complete the function
-    // str: input string
-    public static String reverseWord(String str)
-    {
-        int n = str.length();
-        String s = new String("");
-        for(int i = 0 ; i < n ; i++){
-            
-            char c = str.charAt(n -i -1);
-            s= s+c;
-            
-        }
-        
-        return s;
 
-    }
+//1. kadane's
+//2.  link - https://www.youtube.com/watch?v=HCL4_bOd3-4
+
+      int n = nums.length;
+      int max_sum = Integer.MIN_VALUE;
+      int curr_sum =0;
+
+for(int i = 0 ; i < n ; i++){
+     
+curr_sum = nums[i] + curr_sum;
+      
+       if( curr_sum > max_sum ){
+          max_sum = curr_sum ;
+      }
+      if (curr_sum < 0){
+              curr_sum = 0;
+      }
+
 }
 
-// we can only append a string to a string 
-// if char to a string then str = str + char
-// this is string declaration String s = new String("");
+
+// 3. brute force
+     
+  // for(int i = 0 ; i < n ; i++){
+     
+  //     sum = nums[i] + sum;
+      
+  //     for(int j =0 ; i <n ; j ++){
+  //        if( sum > max ){
+  //         max = sum ;
+  //     }
+  //     }
+
+  //    }    
+
+
+return max_sum;
+}
+}
