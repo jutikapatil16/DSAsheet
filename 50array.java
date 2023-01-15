@@ -1,3 +1,4 @@
+import java.util.Arrays;
 class Solution {
   public boolean isAnagram(String s, String t) {
 
@@ -52,7 +53,7 @@ int [] arr = new int [26];
       if(arr[s.charAt(i)-'a']!=0)return false;
     }
     
-    return true;
+    // return true;
 // 3. convert toCharArray and sort then if element at i same then return true
 
 
