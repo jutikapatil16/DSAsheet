@@ -9,7 +9,7 @@ class Solution {
 
       int n = s.length();
       int m = t.length();
-      String x= "";
+      String x = "";
 
 
 
