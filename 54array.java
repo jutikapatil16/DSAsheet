@@ -4,6 +4,7 @@ class GFG {
   // If the character is a space, store 0
   // Print 
   // Function which computes the sequence
+
   static String printSequence(String arr[], String input)
   {
       String output = "";
