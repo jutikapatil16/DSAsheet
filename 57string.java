@@ -32,7 +32,7 @@ class GFG{
 // User function Template for Java
 
 class Solution{
-static List<Integer> nextPermutation(int N, int arr[]){
+List<Integer> nextPermutation(int N, int arr[]){
  List <Integer> list = new ArrayList<>();
 
 int i = N - 2;
