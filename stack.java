@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
   public int[] nextGreaterElement(int[] arr1, int[] arr2) {
       HashMap<Integer,Integer> map = new HashMap<>();
