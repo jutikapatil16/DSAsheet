@@ -1,89 +1,35 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 
-import java.util.*;
+// While traversing we can’t move head therefore creating a new Node and using it to traverse. Therefore dummy is used so that once current reaches at the end it cant return so dummy.next is returned
 
-// The structure of linked list is the following
-class Node
-{
-    int data;
-    Node next;
-    Node(int d) {
-        data = d; 
-        next = null;
-    }
-}
+class Solution {
+  public ListNode removeElements(ListNode head, int val) {
+   if (head == null) {
+          return null;
+      }
 
+      ListNode dummy = new ListNode();
+      dummy.next = head;
+      ListNode cur = dummy;
 
+      while (cur.next != null) {
+          if (cur.next.val == val) {
+              cur.next = cur.next.next;
+              // Here cannot move cur to cur.next as we need to validate the next node.
+          } else {
+              cur = cur.next;
+          }
+      }
 
-class Solution
-{
-    //Function to remove duplicates from unsorted linked list.
-    public Node removeDuplicates(Node head) 
-    {
-        
-    if (head == null) {
-        
-            return null;
-        }
-        
-
-
-// USING HASHSET when we are to compare (that's why store in hashmap) and do an action/ operation  on it 
-HashSet<Integer> abc = new HashSet<>();
-Node tempNode = head;
-
-abc.add(tempNode.data);
-
-//  1. first sort using swapping 
-//  2. if current.data == current.next.data then 
-//   current.next = current.next.next;
-
-// int temp = 0;
-
-// Node prehead = tempNode;
-// Node curr = prehead;
-
-
-// while(tempNode.next != null){
-//   if(tempNode.next.data > tempNode.next.next.data){
-//       temp = tempNode.next.data;
-//       tempNode.next = tempNode.next.next;
-//   } 
-// }
-
-
-while(tempNode.next != null){
-  if(!abc.contains(tempNode.next.data)){
-      abc.add(tempNode.next.data);
-
-      tempNode = tempNode.next;
-  }else{
-      tempNode.next = tempNode.next.next;
+      return dummy.next;   
   }
 }
-
-
-// while(curr.next != null){
-//   if(curr.next.data == curr.next.next.data){
-//       curr.next = curr.next.next;
-//   }else{
-//       curr = curr.next;
-//   }
-// }
-
-
-return head;
-
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
