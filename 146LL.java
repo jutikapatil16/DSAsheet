@@ -1,6 +1,4 @@
 
-
-/*Node is defined as
 class Node
 {
     int data; 
@@ -9,7 +7,7 @@ class Node
         this.data=data;
         this.next = null;
     }
-}*/
+}
 
 class GfG{
   /*You are required to complete this method */
